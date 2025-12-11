@@ -1,0 +1,145 @@
+
+* {box-sizing: border-box; }
+
+body {
+margin: 0; padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+line-height: 1.6;
+color: #222;
+background: #f8f9fa;
+max-width: 72ch;
+margin: 0 auto;
+padding: 1rem;
+} 
+
+@media (min-width: 700px) {
+	body {padding: 2rem; }
+	form {max-width: 600px; }
+}
+
+/* Reset and Setup */
+*, *::before, *::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: system-ui, sans-serif;
+    background: #0b0e14;
+    color: #e6edf3;
+}
+
+/* Color and design variables */
+:root
+{
+    --primary: #4f9cff; /* Accent blue color */
+    --text: #e6edf3; /* Light text color */
+}
+
+/* Header layout */
+.site-header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111624;
+    padding: 0.75rem 1rem;
+    position: sticky;
+    top: 0;
+}
+/* Logo styling */
+.logo
+{
+color: var(--text);
+text-decoration: none;
+font-weight: bold;
+}
+/* navigation links */
+.site-nav ul
+{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+.site-nav a 
+{
+    text-decoration: none;
+    color: var(--text);
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+/* Hover and active link styles */
+.site-nav a:hover,
+.site-nav a.active
+{
+    background: var(--primary);
+    color: #000;
+}
+
+h2 {
+	padding: 2em;
+}
+
+.center{
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 1em;
+}
+
+footer{
+	text-align: center;
+	padding: 2em;
+}
+
+/* Hide the menu checkbox by default */
+.menu-toggle
+{
+	display:none;
+}
+
+/* The hamburger button*/
+.menu-btn
+{
+	display: none;
+	font-size: 2rem;
+	color: var(--text);
+	cursor: pointer;
+	user-select: none;
+}
+
+/* Mobile styles - everything under 768 px wide */
+@media (max-width: 768px)
+{
+
+	
+/* Show the menu button on small screens */
+.menu-btn
+{
+	display: block;
+}
+
+/* Stack the navigation vertically and hide it by default */
+.site-nav ul
+{
+	flex-direction: column;
+	position: absolute;
+	top: 60px;
+	right: 0;
+	background: #111624;
+	width: 200px;
+	padding: 1rem;
+	border-radius: 8px;
+	display: none;
+}
+
+/* When the checkbox is checked, show the menu */
+.menu-toggle:checked + .menu-btn + .site-nav ul
+{
+	display: flex;
+}
+
+}
